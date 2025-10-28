@@ -20,7 +20,7 @@ EOF
 # Loop through files in the directory
 for file in "$TARGET_DIR"/*; do
   filename=$(basename "$file")
-  if [[ "$filename" =~ "index" ]]; then
+  if [[ "$filename" =~ "index" || "${filename}" == "CNAME" ]]; then
     continue
   fi
   echo "    <li><a href=\"$filename\">$filename</a></li>" >> "$OUTPUT_FILE"
